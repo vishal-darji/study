@@ -1,0 +1,164 @@
+WebJob
+CustomDomain
+LogicApps
+Azure Functions
+ActiveDirectory integrations
+ADFS
+azure  monitor
+Scale set
+Load balancer
+availability set
+Microservices
+Swapping slots
+Queues
+Table
+Blobs
+ARM
+Azure Storage
+Azure Service Fabric	
+API Management
+Azure Deveops
+Fault domains
+Update domains
+Availibility sets
+Vnet vs subnet
+Azure Redis Cache
+=======================================================================================================================================
+
+Steps for Azure AD integration
+
+(1) Create Active Directory
+(2) Create users
+(3) copy clientId and tenantId and domain
+(3) Create new AZure active directory integration project with visual studio
+Command for creating project: dotnet new mvc --auth SingleOrg --domain <DOMAIN> --tenant-id <TENANT_ID> --client-id <CLIENT_ID>
+
+(4) Add reply url from where you need to post your page
+
+(5) Put below code in startup.cs of dotnet core project
+
+		using System;
+		using System.Collections.Generic;
+		using System.Linq;
+		using System.Threading.Tasks;
+		using Microsoft.AspNetCore.Authentication;
+		using Microsoft.AspNetCore.Authentication.AzureAD.UI;
+		using Microsoft.AspNetCore.Authorization;
+		using Microsoft.AspNetCore.Builder;
+		using Microsoft.AspNetCore.Hosting;
+		using Microsoft.AspNetCore.Http;
+		using Microsoft.AspNetCore.HttpsPolicy;
+		using Microsoft.AspNetCore.Mvc;
+		using Microsoft.AspNetCore.Mvc.Authorization;
+		using Microsoft.Extensions.Configuration;
+		using Microsoft.Extensions.DependencyInjection;
+
+		namespace AzureADScenarios
+		{
+			public class Startup
+			{
+				public Startup(IConfiguration configuration)
+				{
+					Configuration = configuration;
+				}
+
+				public IConfiguration Configuration { get; }
+
+				// This method gets called by the runtime. Use this method to add services to the container.
+				public void ConfigureServices(IServiceCollection services)
+				{
+					services.Configure<CookiePolicyOptions>(options =>
+					{
+						// This lambda determines whether user consent for non-essential cookies is needed for a given request.
+						options.CheckConsentNeeded = context => true;
+						options.MinimumSameSitePolicy = SameSiteMode.None;
+					});
+
+					services.AddAuthentication(AzureADDefaults.AuthenticationScheme)
+						.AddAzureAD(options => Configuration.Bind("AzureAd", options));
+
+					services.AddMvc(options =>
+					{
+						var policy = new AuthorizationPolicyBuilder()
+							.RequireAuthenticatedUser()
+							.Build();
+						options.Filters.Add(new AuthorizeFilter(policy));
+					})
+					.SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+				}
+
+				// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+				public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+				{
+					if (env.IsDevelopment())
+					{
+						app.UseDeveloperExceptionPage();
+					}
+					else
+					{
+						app.UseExceptionHandler("/Home/Error");
+						app.UseHsts();
+					}
+
+					app.UseHttpsRedirection();
+					app.UseStaticFiles();
+					app.UseCookiePolicy();
+
+					app.UseAuthentication();
+
+					app.UseMvc(routes =>
+					{
+						routes.MapRoute(
+							name: "default",
+							template: "{controller=Home}/{action=Index}/{id?}");
+					});
+				}
+			}
+		}
+
+=======================================================================================================================================================
+WS* specifications
+https://www.infoq.com/articles/ws-standards-wcf-bustamante/
+
+JWT inof
+https://jwt.io/introduction/
+
+JWT implementation
+https://www.c-sharpcorner.com/article/jwt-json-web-token-authentication-in-asp-net-core/
+
+OpenIdConnect
+https://spin.atomicobject.com/2016/05/30/openid-oauth-saml/
+https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2
+
+Cloud interview questions
+https://www.youtube.com/watch?v=_Pyityj08vU
+
+Difference between logicapps and functions
+https://docs.microsoft.com/en-us/azure/azure-functions/functions-compare-logic-apps-ms-flow-webjobs
+
+storage queue vs service bus queue
+https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted
+=========================================================================================================================================================
+
+Steps for Azure functions
+(1) create azure function in portal
+
+(2) Create azure function project in VS
+
+(3) Get publishing profile from the azure portal - or you can also get the code
+
+(4) write teh code in visual studio
+
+(5) specify function name, route, http verb
+
+(6) run the microsoft storage emulator for testing
+
+==========================================================================================================================================================
+
+
+Steps for Azure Logic App
+(1) if logic app extension is not installed, need to isntall it
+ - install logic apps tools for visual studio
+
+(2) 
+

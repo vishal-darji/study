@@ -1,0 +1,38 @@
+Architect / Technical Lead / Technical Developer
+922039 / 922044 / 881917 / 884113 / 800417
+4 Years – 15 Years
+
+Skills:
+•	Minimum 4-15 years’ Experience in IT Application Development primarily around Microsoft Technologies
+•	Extensive experience in design and implementation of complex solutions on Microsoft platforms and technologies
+•	Azure API Service, Cloud-Microsoft Azure DevOps 
+•	Minimum of 2+ years of experience in developing applications using PaaS components like Web   Apps, Web Jobs, API Apps, Functions, Mobile Apps, Azure SQL, Storage etc.
+•	In depth knowledge of system design for Azure cloud based applications across IaaS, PaaS and SaaS models
+•	Hands-on proficiency on Deployment on Azure and other Microsoft platforms is mandatory.
+•	Minimum of 3+ years of experience in C#, .NET Framework 4.0 and above.
+•	Evaluated Features like API Management, Logic Apps, Azure Services Bus and BizTalk Services.
+•	Understands web application migration to Microsoft Azure and have done a solution migration.
+•	Experience in design and implementation of cloud native applications
+•	Cloud feasibility assessment with an ability to propose optimal cloud solution on Azure
+•	Well-versed with ASP.NET, MVC, SOAP and RESTful Services.
+•	Experience in planning and executing migration programs to Azure and hybrid landscapes
+•	Experience in designing cloud solutions for scalability, high availability
+•	Expertise in designing secure applications on Azure
+•	Proven ability to communicate with audience at all levels
+•	Azure Cognitive Services, ML knowledge is desired
+•	Azure IoT knowledge is a plus
+
+Role & Responsibilities:
+
+•	Develop cloud solution design for Enterprise customers
+•	Leading project teams in delivering intelligent cloud applications
+•	Mentor team members in both technical and process related areas
+•	Design and work on proof of concepts that can be demonstrated to customer
+•	Become customer’s trusted technical advisor and subject-matter expert.
+•	Lead client engagements and present solutions to both technical and business stakeholders and facilitate strategic discussions
+•	Stay updated on Azure services, and contribute towards capability, competency building on Azure
+•	Understand Enterprise Application design framework and processes
+•	Establish cloud best practices and review code
+
+
+
